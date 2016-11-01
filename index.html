@@ -11,6 +11,7 @@
   </head>
   <body>
     <div class="container">
+
       <div class="row">
         <div class="col-xs-12"><h3>Yahoo Weather</h3></div>
       </div>
@@ -21,16 +22,20 @@
             <input id="city" type="text" class="form-control" placeholder="Enter City" required>
           </div>
           <ul class="nav nav-tabs">
-          <li class="active"><a href="#"><button id="search-button1" type="submit" class="btn btn-link">Display Forecast</button></a></li>
-          <li><a href="#"><button id="search-button" type="submit" class="btn btn-link">Display Forecast</button></a></li>
-          <li><a href="#"><button id="search-buttons" type="submit" class="btn btn-link">Display Forecast in Celcius</button></a></li>
-          <li><a href="#"><button id="search-button2" type="submit" class="btn btn-link">Display Forecast in Celcius</button></a></li>
-        </ul>
+            <li class="active"><a href="#"><button id="search-button1" type="submit" class="btn btn-link">Display Forecast of the Week</button></a></li>
+            <li><a href="#"><button id="search-button" type="submit" class="btn btn-link">Display Forecast of the Day</button></a></li>
+            <li><a href="#"><button id="search-buttons" type="submit" class="btn btn-link">Display Forecast in Celcius</button></a></li>
+            <li><a href="#"><button id="search-button2" type="submit" class="btn btn-link">Display Forecast in Celcius</button></a></li>
+          </ul>
+          <div class="tab-content">
+            <div id="week" class="tab-pane fade in active">
+              <div class = "result-container">
+              </div>
+            </div>
+
         </form>
       </div>
 
-      <div class="result-container">
-      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
