@@ -18,13 +18,14 @@ window.GiphySearchController = (() => {
             var searchButton = $("#search-button");
             var searchTerm = $("#search-term");
             var imageResultContainer = $(".image-result-container");
+            var api_key
 
             searchButton.click(() => {
                 // The getJSON function initiates a connection to the web service.
-                $.getJSON("http://api.giphy.com/v1/gifs/search", {
+                $.getJSON("http://weather.yahooapis.com/forecastrss", {
                     rating: "pg-13", // Exercise: Hook this up to the front end.
                     q: searchTerm.val(),
-                    api_key: "dc6zaTOxFJmzC" // Giphy's public beta key (thank you Giphy).
+                    api_key: "dj0yJmk9NHMzbTFwU1ZkWXM2JmQ9WVdrOWJrUm1aVFY1TkdVbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD1lYQ" // Giphy's public beta key (thank you Giphy).
                 }).done((result) => {
                     // Receiving the response renders it in an HTML element tree then
                     // appends it to the element(s) with the class image-result-container.

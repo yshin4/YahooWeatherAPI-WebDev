@@ -10,5 +10,6 @@ function getForecast(){
     } else {
       $('.result-container').html('<h2>' + data.query.results.channel.item.title + '</h2>' + data.query.results.channel.item.description)
     }
-  });
+  })
+  ;
 }
