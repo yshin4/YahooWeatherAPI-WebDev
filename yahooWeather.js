@@ -12,7 +12,7 @@ function getForecast(){
     if(!data.query.results){
       alert("Location not found: " + location + "!");
     } else {
-      $('.result-container').html('<h2>' + data.query.results.channel.item.title + '</h2>' + data.query.results.channel.item.description)
+      $('.result-container1').html('<h2>' + data.query.results.channel.item.title + '</h2>' + data.query.results.channel.item.description)
     }
   })
   ;
@@ -25,7 +25,7 @@ function getForecast(){
     if(!data.query.results){
       alert("Location not found: " + location + "!");
     } else {
-      $('.result-container').html('<h2>' + data.query.results.channel.item.title + '</h2>' + data.query.results.channel.item.description)
+      $('.result-container2').html('<h2>' + data.query.results.channel.item.title + '</h2>' + data.query.results.channel.item.description)
     }
   })
   ;
