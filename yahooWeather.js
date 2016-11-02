@@ -13,6 +13,7 @@ function getForecast(){
     } else {
       $('.result-container1').html('<h2>' + data.query.results.channel.item.title + '</h2>' + data.query.results.channel.item.description);
       $('.result-container2').html('<h2>' + data.query.results.channel.item.title + '</h2>');
+      $('.result-container3').html('<h2>' + data.query.results.channel.item.condition.temperature + '</h2>');
     }
   })
   ;
@@ -30,3 +31,9 @@ function getForecast(){
   })
   ;
 }
+
+$(document).ready(function(){
+    $(".nav-tabs a").click(function(){
+        $(this).tab('show');
+    });
+});
