@@ -23,20 +23,35 @@
           </div>
           <ul class="nav nav-tabs">
             <li class="active"><a href="#forecast"><button id="search-button1" type="submit" class="btn btn-link">Display Forecast</button></a></li>
-            <li><a href="#windForecast"><button id="search-button2" type="submit" class="btn btn-link">Display Wind Forecast</button></a></li>
+            <!-- <li><a href="#windForecast"><button id="search-button2" type="submit" class="btn btn-link">Display Wind Forecast</button></a></li> -->
             <li><a href="#atmosphere"><button id="search-button3" type="submit" class="btn btn-link">Display Atmosphere</button></a></li>
             <li><a href="#map"><button id="search-button4" type="submit" class="btn btn-link">Location on Map</button></a></li>
-            <li><a href="#forecastLink"><button id="search-button4" type="submit" class="btn btn-link">Links for more</button></a></li>
+            <li><a href="#link"><button id="search-button4" type="submit" class="btn btn-link">Links for more</button></a></li>
           </ul>
           <div class="tab-content">
             <div id="forecast" class="tab-pane fade in active">
-              <div class = "result-container1">
+              <div class ="result-container1">
+              </div>
+              <div class="panel-group">
+                <div class="panel panel-default">
+                  <div class="panel heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapse1">Wind Forecast</a>
+                    </h4>
+                  </div>
+                  <div id="collapse1" class="panel-collapse collapse">
+                    <div id="collapse1" class="panel-body">
+                      <div class="result-container2">
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div id="windForecast" class="tab-pane fade">
+            <!-- <div id="windForecast" class="tab-pane fade">
               <div class = "result-container2">
               </div>
-            </div>
+            </div> -->
             <div id="atmosphere" class="tab-pane fade">
               <div class = "result-container3">
               </div>
@@ -45,7 +60,7 @@
               <div class = "result-container4">
               </div>
             </div>
-            <div id="forecastLink" class="tab-pane fade">
+            <div id="link" class="tab-pane fade">
               <div class = "result-container5">
               </div>
             </div>
