@@ -57,7 +57,7 @@ function getForecast(){
       $('.result-container4').html('<h2>' + '<img src="Sunrise.svg">' + 'Sunrise: ' + data.query.results.channel.astronomy.sunrise + '</h2>');
       $('.result-container5').html('<h2>' + '<img src="Sunrise.svg">' + 'Sunset: ' + data.query.results.channel.astronomy.sunset + '</h2>');
       $('.result-container6').html('<h3>' + '<a href="' + data.query.results.channel.item.link + '"> Yahoo Weather Site </a>' + '</h3>'
-                                    + '<h3>' + "latitude " + data.query.results.channel.item.lat + " longitide " + data.query.results.channel.item.long + '<h3>');
+                                    + '<h3>' + "latitude " data.query.results.channel.item.lat + " longitide " + data.query.results.channel.item.long + '</h3>');
     }
   });
 }
