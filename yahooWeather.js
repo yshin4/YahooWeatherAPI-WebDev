@@ -13,23 +13,11 @@ function getForecast(){
     } else {
       $('.result-container1').html('<h2>' + data.query.results.channel.item.title + '</h2>' + data.query.results.channel.item.description);
       $('.result-container2').html('<h2>' + data.query.results.channel.item.title + '</h2>');
-      $('.result-container3').html('<h2>' + data.query.results.channel.item.condition.temperature + '</h2>');
+      $('.result-container3').html('<h2>' + data.query.results.channel.item.condition.temp + '</h2>');
+      $('.result-container4').html('<h2>' + "chill: " + data.query.results.channel.wind.chill + "direction: " + data.query.results.channel.wind.direction + "speed: " + data.query.results.channel.wind.speed +'</h2>');
+      $('.result-container5').html('<h2>' + data.query.results.channel.item.condition.temp + '</h2>');
     }
-  })
-  ;
-
-  $.get('https://query.yahooapis.com/v1/public/yql', {
-    q: 'select wind from weather.forecast where woeid in (select woeid from geo.places(1) where text="' + location + '")',
-    format: 'json',
-    u: 'c'
-  }, function(data){
-    if(!data.query.results){
-      alert("Location not found: " + location + "!");
-    } else {
-      $('.result-container2').html('<h2>' + data.query.results.channel.item.title + '</h2>' + data.query.results.channel.item.description)
-    }
-  })
-  ;
+  });
 }
 
 $(document).ready(function(){
