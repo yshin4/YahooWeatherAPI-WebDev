@@ -14,7 +14,7 @@ function getForecast(){
       $('.result-container1').html('<h2>' + data.query.results.channel.item.title + '</h2>' + data.query.results.channel.item.description)
     }
   })
-  ; 
+  ;
 
   $.get('https://query.yahooapis.com/v1/public/yql', {
     q: 'select wind from weather.forecast where woeid in (select woeid from geo.places(1) where text="' + location + '")',
