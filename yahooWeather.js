@@ -15,7 +15,7 @@ function getForecast(){
       $('.result-container2').html('<h2>' + data.query.results.channel.item.title + '</h2>');
       $('.result-container3').html('<h2>' + data.query.results.channel.item.condition.temp + '</h2>');
       $('.result-container4').html('<h2>' + "chill: " + data.query.results.channel.wind.chill + "direction: " + data.query.results.channel.wind.direction + "speed: " + data.query.results.channel.wind.speed +'</h2>');
-      $('.result-container5').html('<h2>' + data.query.results.channel.item.condition.temp + '</h2>');
+      $('.result-container5').html('<h3>' + '<a href="' + data.query.results.channel.item.link + '"> Yahoo Weather Site </a>' + '</h3>');
     }
   });
 }
