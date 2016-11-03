@@ -31,9 +31,13 @@ var getForecast = function() {
             $('.result-container6').html('<h3>' + '<a href="' + data.query.results.channel.item.link + '"> Yahoo Weather Site </a>' + '</h3>' + '<h3>' + "latitude " + data.query.results.channel.item.lat + " longitide " + data.query.results.channel.item.long + '</h3>');
         }
     });
+    return false;
 };
 $(document).ready(function() {
     $(".nav-tabs a").click(function() {
         $(this).tab('show');
     });
 });
+
+$("#Forecast").submit(getForecast);
+
