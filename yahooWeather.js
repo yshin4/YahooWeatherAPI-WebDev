@@ -8,10 +8,16 @@ var getForecast = function() {
         format: 'json',
         u: 'f'
     }, function(data) {
+        var dataChannel = data.query.results.channel;
+        var dataItem = data.query.results.channel.item;
         if (!data.query.results) {
             alert("Location not found: " + location + "!");
         } else {
-            $('.result-container1').html('<h2><em>' + data.query.results.channel.item.title + '</em></h2>' + '<h3><b>' + "Forecast for " + data.query.results.channel.item.forecast[0].day + ", " + data.query.results.channel.item.forecast[0].date + ":" + '</b></h3>' + '<h4>' + "Current Condition: " + data.query.results.channel.item.forecast[0].text + '</h4>' + '<h4>' + "Low: " + data.query.results.channel.item.forecast[0].low + "°" + data.query.results.channel.units.temperature + '</h4>' + '<h4>' + "High: " + data.query.results.channel.item.forecast[0].high + "°" + data.query.results.channel.units.temperature + '</h4>');
+            $('.result-container1').html('<h2><em>' + dataChannel.title + '</em></h2>' + '<h3><b>' +
+            "Forecast for " + dataItem.forecast[0].day + ", " + dataItem.forecast[0].date + ":" + '</b></h3>' +
+            '<h4>' + "Current Condition: " + dataItem.forecast[0].text + '</h4>' + '<h4>' + "Low: " +
+            dataItem.forecast[0].low + "°" +dataChannel.units.temperature + '</h4>' + '<h4>' +
+            "High: " + dataItem.forecast[0].high + "°" + dataChannel.units.temperature + '</h4>');
             $('.day1-day').html(data.query.results.channel.item.forecast[1].day);
             $('.day2-day').html(data.query.results.channel.item.forecast[2].day);
             $('.day3-day').html(data.query.results.channel.item.forecast[3].day);
@@ -40,4 +46,3 @@ $(document).ready(function() {
 });
 
 $("#Forecast").submit(getForecast);
-
