@@ -1,5 +1,6 @@
 "use strict";
 
+(function () {
 
 var getForecast = function() {
     var location = $('#city').val();
@@ -60,3 +61,11 @@ $(document).ready(function() {
 });
 
 $("#Forecast").submit(getForecast);
+
+    window.WeatherController = {
+        init: function () {
+            $("#Forecast").submit(getForecast);
+        }
+    };
+
+})();
