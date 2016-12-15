@@ -55,9 +55,9 @@ describe("Giphy search example", function () {
             jasmine.Ajax.uninstall();
         });
 
-        it("should trigger a Giphy search when the search button is clicked", () => {
-            expect(request.url).toBe("http://api.giphy.com/v1/gifs/search?rating=pg-13&q=hello&api_key=dc6zaTOxFJmzC");
-        });
+        it("should trigger a weather display", () => {
+            expect(request.url.match(/Display Forecast/)).toBeTruthy();
+        })
 
         it("should populate the image container when search results arrive", () => {
             expect($(".image-result-container").children().length).toBe(0);

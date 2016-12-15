@@ -24,7 +24,7 @@ describe("Giphy search example", function () {
         });
 
         it("should trigger a Giphy search when the search button is clicked", () => {
-            expect(request.url).toBe("http://api.giphy.com/v1/gifs/search?rating=pg-13&q=hello&api_key=dc6zaTOxFJmzC");
+            expect(request.url).toBe("");
         });
 
         it("should populate the image container when search results arrive", () => {

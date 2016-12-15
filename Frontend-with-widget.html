@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="jquery.div-slider.css">
   </head>
   <body>
     <div class="container">
@@ -17,7 +18,7 @@
       </div>
 
       <div class="search-section">
-        <form class="search-group" role="search" id="Forecast">
+        <form class="search-group" role="search" id="Forecast" id="Slider">
           <div class="form-group">
             <input id="city" type="text" class="form-control" placeholder="Enter City" required>
           </div>
@@ -96,6 +97,47 @@
                    </div>
                  </div>
 
+                 <div class="mask">
+                   <ul class="data" style="list-style: none">
+                     <li>
+                        <div class="day0-forecast">
+                        </div>
+                     </li>
+                     <li>
+                        <div class="day1-forecast">
+                        </div>
+                     </li>
+                     <li>
+                        <div class="day2-forecast">
+                        </div>
+                     </li>
+                     <li>
+                        <div class="day3-forecast">
+                        </div>
+                     </li>
+                     <li>
+                        <div class="day4-forecast">
+                        </div>
+                     </li>
+                     <li>
+                        <div class="day5-forecast">
+                        </div>
+                     </li>
+                     <li>
+                        <div class="day6-forecast">
+                        </div>
+                     </li>
+                 </div>
+
+                 <div class = "col-sm-6">
+                   <div class = "slider">
+                     <div class = "knob">
+                     </div>
+                   </div>
+                 </div>
+
+
+
               </div><br>
 
               <div class="conatiner">
@@ -151,6 +193,7 @@
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="yahooWeather.js"></script>
+    <script src="jquery.div-slider.js"></script>
 
   </body>
 </html>
