@@ -1,20 +1,23 @@
-describe("Giphy search example", function () {
+describe("Yahoo weather front end", function () {
+
     beforeEach(() => {
         fixture.setBase("test");
         fixture.load("search.fixture.html");
+        WeatherController.init();
     });
 
     afterEach(() => {
         fixture.cleanup();
     });
+
     describe("API calls", () => {
         var request;
 
         beforeEach(() => {
             jasmine.Ajax.install();
 
-            $("#city").val("Los Angeles");
-            $("#search-button1").click();
+            $("#city").val("Tatooine");
+            $("#Forecast").submit();
 
             request = jasmine.Ajax.requests.mostRecent();
         });
@@ -23,32 +26,55 @@ describe("Giphy search example", function () {
             jasmine.Ajax.uninstall();
         });
 
+<<<<<<< HEAD
         it("should trigger a Giphy search when the search button is clicked", () => {
             expect(request.url).toBe("");
+=======
+        it("should have an initial value of Tatooine", () => {
+            expect($("#city").val()).toBe("Tatooine");
+        });
+
+        it("should trigger a Yahoo weather search when the form is submitted", () => {
+            expect(request.url.match(/https:\/\/query.yahooapis.com\/v1\/public\/yql/)).toBeTruthy();
+            expect(request.url.match(/Tatooine/)).toBeTruthy();
+>>>>>>> c0aec32a72ce19ce1fd9954b693bc9915a7801bb
         });
 
         it("should populate the image container when search results arrive", () => {
-            expect($(".image-result-container").children().length).toBe(0);
+            expect($(".result-container1").children().length).toBe(0);
 
-            // To manage size, we supply a mock response that contains _only_ what the app will need. This does mean
-            // that we need to revise the mock response if our app starts using more (or different) data.
             request.respondWith({
                 status: 200,
                 responseText: JSON.stringify({
-                    data: [{
-                        source_tld: "tumblr.com",
-                        images: {
-                            fixed_width: {
-                                url: "http://media2.giphy.com/media/FiGiRei2ICzzG/200w.gif"
+                    query: {
+                        results: {
+                            channel: {
+                                astronomy: {
+                                },
+                                atmosphere: {
+                                },
+                                item: {
+                                    forecast: [
+                                        { day: "Hi" },
+                                        { day: "Jen" },
+                                        { day: "and" },
+                                        { day: "Jay" },
+                                        { day: "what" },
+                                        { day: "is" },
+                                        { day: "up" }
+                                    ]
+                                },
+                                units: {
+                                },
+                                wind: {
+                                }
                             }
                         }
-                    }]
+                    }
                 })
             });
 
-            expect($(".image-result-container").children().length).toBe(1);
-            // We can go even further by examining the resulting element(s) and expecting their content to match the
-            // mock response, but we will leave this as "further work" for now.
+            expect($(".result-container1").children().length).toBe(5);
         });
     });
 });
