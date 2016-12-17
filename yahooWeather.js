@@ -19,12 +19,6 @@ var getForecast = function() {
             '<h4>' + "Current Condition: " + dataItem.forecast[0].text + '</h4>' + '<h4>' + "Low: " +
             dataItem.forecast[0].low + "°" + dataChannel.units.temperature + '</h4>' + '<h4>' +
             "High: " + dataItem.forecast[0].high + "°" + dataChannel.units.temperature + '</h4>');
-            $('.day1-day').html(dataItem.forecast[1].day);
-            $('.day2-day').html(dataItem.forecast[2].day);
-            $('.day3-day').html(dataItem.forecast[3].day);
-            $('.day4-day').html(dataItem.forecast[4].day);
-            $('.day5-day').html(dataItem.forecast[5].day);
-            $('.day6-day').html(dataItem.forecast[6].day);
             $('.day1-forecast').html(getForecastByDay(1, dataItem, dataChannel));
             $('.day2-forecast').html(getForecastByDay(2, dataItem, dataChannel));
             $('.day3-forecast').html(getForecastByDay(3, dataItem, dataChannel));
